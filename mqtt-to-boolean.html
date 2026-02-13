@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    RED.nodes.registerType('mqtt-to-boolean',{
+        category: 'network',
+        color: '#bc80ed',
+        defaults: {
+            name: {value:""},
+            topic: {value:"", required:true},
+            qos: {value:"1"},
+            // This is what makes the "Select/Add Server" dropdown appear
+            broker: {type:"mqtt-broker", required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "bridge.svg",
+        label: function() {
+            return this.name || this.topic || "MQTT to Boolean";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mqtt-to-boolean">
+    <div class="form-row">
+        <label for="node-input-broker"><i class="fa fa-globe"></i> Broker</label>
+        <input type="text" id="node-input-broker">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="device/data">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-qos"><i class="fa fa-level-up"></i> QoS</label>
+        <select id="node-input-qos">
+            <option value="0">0 - At most once</option>
+            <option value="1">1 - At least once</option>
+            <option value="2">2 - Exactly once</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="mqtt-to-boolean">
+    <p>A custom MQTT node that returns a Boolean.</p>
+    <p>The <code>msg.payload</code> output will be <b>true</b> if the broker is connected and the message is sent, or <b>false</b> if the connection is lost.</p>
+</script>
