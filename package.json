@@ -1,6 +1,6 @@
 {
   "name": "@abuuwais/node-red-contrib-mqtt-to-boolean",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Node-RED node that sends a message to an MQTT broker and outputs a boolean status.",
   "author": "Abu Uwais Triyadi <uwaiscode@gmail.com>",
   "license": "MIT",

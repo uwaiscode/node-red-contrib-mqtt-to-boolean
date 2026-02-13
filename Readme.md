@@ -11,7 +11,7 @@ To install this node, you can either:
 
     ```bash
     cd ~/.node-red
-    git clone https://github.com/your-username/node-red-contrib-mqtt-to-boolean.git
+    git clone https://github.com/uwaiscode/node-red-contrib-mqtt-to-boolean.git
     cd node-red-contrib-mqtt-to-boolean
     npm install
     ```
